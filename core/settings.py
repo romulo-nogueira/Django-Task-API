@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     #Terceiros
     'rest_framework',
     'drf_spectacular',
+    'rest_framework_simplejwt',
 
     #App do projeto
     'tasks',
@@ -127,11 +128,11 @@ STATIC_URL = 'static/'
 
 REST_FRAMEWORK ={
     'DEFAULT_SCHEMA_CLASS':'drf_spectacular.openapi.AutoSchema',
-    'DEFAULT_AUTHENTICATION_CLASS': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication'
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 
-    'DEFAULT_PERMISSION_CLASS': (
+    'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
     ),
 
